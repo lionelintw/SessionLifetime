@@ -1,13 +1,6 @@
 <?php
-function start_session($lifeTime = 0)
+function start_session($lifeTime = 300)
 { //秒
-    if ($lifeTime == 0)
-    {
-        $lifeTime = ini_get('session.gc_maxlifetime');
-    } else
-    {
-        ini_set('session.gc_maxlifetime', $lifeTime);
-    }
     $time_stamp = time() + $lifeTime;
     if (!isset($_SESSION))
     {
